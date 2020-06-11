@@ -29,20 +29,53 @@ You can also set a default code editor i.e. for VSCode
 git config --global core.editor "code --wait"
 ```
 
-## Git Code
+# Git Code
 
 To create/initialise a new repository inside a new folder we `git init`. This will create a new folder **.git** in the Working Directory which houses all the information about the Repository.
 ```
 git init
 ```
 
-![.git folder](img/git folder.jpg)
+If you want to get and existing repository from https://github.com/
+```
+git clone
+```
+
+# .git directory structure
+
+![](img/gitfolder.jpg)
+
+**Directories**
+
+`branches:` 
+
+`hooks:` this is where we could place client-side or server-side scripts that we can use to hook into Git's different lifecycle events
+
+`info:` contains the global excludes file
+
+`logs:` 
+
+`objects:` this directory will store all of the commits we make
+
+`refs:` this directory holds pointers to commits (basically the "branches" and "tags")
+
+
+**Files**
+
+`config:` where all project specific configuration settings are stored. If you want your work email to be used for a specific project rather than your personal email, that change would be added to this file.
+
+`description:` this file is only used by the GitWeb program. ignore it
+
+`HEAD:` 
+
+`index:` 
+
+`packed-refs:` 
 
 
 
 
-
-## GIT Glossary
+# GIT Glossary
 
 **Branch:** a new line of development is created that diverges from the main line of development
 
