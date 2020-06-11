@@ -35,20 +35,30 @@ To create/initialise a new repository inside a new local folder. This will creat
 ```
 git init
 ```
+</br>
+It is good practive to have these files in the repository
 
+`.gitignore` conatins file and folder name/prefixes/suffices for all the thing that should be ignored when commiting
+
+`README.md` conatins the information about the repository
+
+</br>
 If you want to get and existing repository from https://github.com/
 ```
 git clone [repo https or ssh]
 ```
 
+</br>
 To check the current status of the Working Directory.
+
 ```
 git status
 ```
 
+</br>
 To view the log of commits made. Logs contain the SHA, Authoer, Date, Message.
 
-The `--oneline` argument display the first part of the SHA and the message only. The `--stat` argument shows extra statistics about how nay lines were changed. The `--patch` shows the actual content of the file (can be quite verbose so the first 7 characters of the SHA can also be provided).
+The `--oneline` argument display the first part of the SHA and the message only. The `--stat` argument shows extra statistics about how nay lines were changed. The `--patch` shows the actual content of the file.
 ```
 git log
 git log --oneline
@@ -57,30 +67,78 @@ git log --patch
 git log --patch fdf5493
 ```
 
+</br>
 To view the latest SHA's `--patch`.
+
 ```
 git show
 ```
 
+</br>
 To add any current changes to the Staging Index. Using `.` will stage all current changed files/folders.
+
 ```
 git add [filename]
 git add [filename] [filename2] [filename3]
 git add .
 ```
 
+</br>
 To remove any current changes from the Staging Index. This will not delet files or folders.
+
 ```
 git rm --cached
 ```
 
-To commit the Staging Index. Using `-m "some message"` will add the commit message upon commit without opening up an editor.
+</br>
+To commit the Staging Index. Using `-m "some message"` will add the commit message upon commit bypassing an editor.
+
 ```
 git commit
 git commit -m "[message]"
 ```
 
-# .git directory structure
+</br>
+To see any changes not yet commited. Actually for some reason `git diff` is the same as `git log --patch`
+
+```
+git diff
+```
+
+</br>
+
+Tags can be used to give special meaning to a particlay commit (i.e. v1.0 of a new code base). The `-a` tells git where going to create an annotated flag. The `-d` can be used to delete a tag if it's wrong before a commit. Providing the SHA allows you to tag or remove tages from any commit.
+
+```
+git tag
+git tag -a v1.0
+git tag -d v1.0
+git tag -a beta a87984
+git tag -d beta a87984
+```
+
+</br>
+
+To create a new working branch so you are not working on the master branch. Using `branch` alone will just show you what barcnhes there are. prociding a bra
+```
+git branch
+git branch [branchname]
+```
+
+```
+git checkout
+```
+
+```
+git merge
+```
+
+
+</br>
+
+# FILES AND FOLDERS
+
+## .git directory structure
 
 ![](img/gitfolder.jpg)
 
@@ -98,6 +156,7 @@ git commit -m "[message]"
 
 `refs:` this directory holds pointers to commits (basically the "branches" and "tags").
 
+</br>
 
 **Files**
 
@@ -110,6 +169,25 @@ git commit -m "[message]"
 `index:` where Git stores your staging area information.
 
 `packed-refs:` consists of packed heads and tags. It is useful for an efficient repository access.
+
+</br>
+
+## .gitignore
+
+blank lines can be used for spacing
+
+`#` marks line as a comment
+
+`*` matches 0 or more characters
+
+`?` matches 1 character
+
+`[abc]` matches a, b, _or_ c
+
+`**` matches nested directories
+- i.e. (a/**/z) matches (a/z, a/b/z, a/b/c/z)
+
+</br>
 
 # GIT Glossary
 
