@@ -78,8 +78,8 @@ git show
 To add any current changes to the Staging Index. Using `.` will stage all current changed files/folders.
 
 ```
-git add [filename]
-git add [filename] [filename2] [filename3]
+git add [file-name]
+git add [file-name] [file-name-2] [file-name-3]
 git add .
 ```
 
@@ -119,20 +119,36 @@ git tag -d beta a87984
 
 </br>
 
-To create a new working branch so you are not working on the master branch. Using `branch` alone will just show you what barcnhes there are. prociding a bra
+To create a new working branch so you are not working on the master branch. Using `branch` alone will just show you what bracnhes there are. Providing a branch name will create a new local branch. Using `-d` will delete the branch.
 ```
 git branch
-git branch [branchname]
+git branch [branch-name]
+git branch -d [branch-name]
 ```
 
+</br>
+
+To change the Working Directory to a new or existing branch. Providing the `-b` argument will create a new branch like in `branch` above and moves to the new branch staright away.
+
 ```
-git checkout
+git checkout [branch-name]
+git checkout -b [branch-name]
 ```
 
+</br>
+
+Combined branches together is called merging. All branches get merged into the current `CHECKED OUT` branch
 ```
 git merge
+git merge [branch-name-to-merge-in]
 ```
 
+</br>
+
+To undo a merge on the wrong branch
+```
+git reset --hard HEAD^
+```
 
 </br>
 
@@ -197,9 +213,11 @@ blank lines can be used for spacing
 
 **Commit:** save the snapshot.
 
-**HEAD:**
+**HEAD:** the leading branch. Usually Master
 
 **Master:** the default working branch of any repository.
+
+**Merge conflict:** 
 
 **Origin:**
 
