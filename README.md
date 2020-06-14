@@ -31,7 +31,7 @@ git config --global core.editor "code --wait"
 
 # Git Code
 
-To create/initialise a new repository inside a new local folder. This will create a new folder **.git** in the Working Directory which houses all the information about the Repository.
+To create/initialise a new repository inside a new local folder. This will create a new folder **.git** in the Working Directory which houses all the information about the Repository. It will also create a **master** barnch
 ```
 git init
 ```
@@ -42,8 +42,10 @@ It is good practive to have these files in the repository
 
 `README.md` conatins the information about the repository
 
-</br>
+`master` branch is not a special branch. It's exactly like any other branch. The only reason nearly every repository has one is that the `git init` command creates it by default and most people don’t bother to change it.
+
 If you want to get and existing repository from https://github.com/
+
 ```
 git clone [repo https or ssh]
 ```
@@ -68,6 +70,7 @@ git log --patch fdf5493
 ```
 
 </br>
+
 To view the latest SHA's `--patch`.
 
 ```
@@ -75,6 +78,7 @@ git show
 ```
 
 </br>
+
 To add any current changes to the Staging Index. Using `.` will stage all current changed files/folders.
 
 ```
@@ -84,6 +88,7 @@ git add .
 ```
 
 </br>
+
 To remove any current changes from the Staging Index. This will not delet files or folders.
 
 ```
@@ -91,14 +96,17 @@ git rm --cached
 ```
 
 </br>
-To commit the Staging Index. Using `-m "some message"` will add the commit message upon commit bypassing an editor.
+
+To commit the Staging Index. Using `-m "some message"` will add the commit message upon commit bypassing an editor. using `--ammend` will modify the last commit.
 
 ```
 git commit
 git commit -m "[message]"
+git commit --ammend
 ```
 
 </br>
+
 To see any changes not yet commited. Actually for some reason `git diff` is the same as `git log --patch`
 
 ```
@@ -137,7 +145,8 @@ git checkout -b [branch-name]
 
 </br>
 
-Combined branches together is called merging. All branches get merged into the current `CHECKED OUT` branch
+Combined branches together is called merging. All branches get merged into the current `CHECKED OUT` branch.
+
 ```
 git merge
 git merge [branch-name-to-merge-in]
@@ -145,10 +154,53 @@ git merge [branch-name-to-merge-in]
 
 </br>
 
-To undo a merge on the wrong branch
+To undo a merge on the wrong branch.
+
 ```
 git reset --hard HEAD^
 ```
+
+</br>
+
+To merge an updated master into a branch. DO NOT rebase commits that exist outside your repository and that people may have based work on.
+
+```
+git checkout [branch-name-your-working-on]
+git rebase master
+```
+
+</br>
+
+# WHAT TO DO WHEN
+
+## RESOLVING A MERGE CONFLICT
+
+Merge Conflict Indicators Explanation
+
+`<<<<<<< HEAD`
+
+ Everything below this line (until the next indicator) shows you what's on the current branch.
+
+`|||||||`
+
+ Merged common ancestors everything below this line (until the next indicator) shows you what the original lines were
+
+`=======`
+
+Is the end of the original lines, everything that follows (until the next indicator) is what's on the branch that's being merged in
+
+`>>>>>>>`
+
+Heading-update is the ending indicator of what's on the branch that's being merged in (in this case, the heading-update branch)
+
+</br>
+
+To resolve a merge conflict, you need to:
+
+1) use `git status` to check what is wrong
+2) choose which line(s) to keep
+3) remove all lines with indicators
+4) stage, commit, then push
 
 </br>
 
@@ -213,11 +265,11 @@ blank lines can be used for spacing
 
 **Commit:** save the snapshot.
 
-**HEAD:** the leading branch. Usually Master
+**HEAD:** the leading branch. Usually Master.
 
 **Master:** the default working branch of any repository.
 
-**Merge conflict:** 
+**Merge conflict:** will happen when the exact same line(s) are changed in separate branches.
 
 **Origin:**
 
