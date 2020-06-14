@@ -171,6 +171,26 @@ git rebase master
 
 </br>
 
+Undo all changes made in a commit and make a new commit. The SHA of a specific commit can be provided.
+
+```
+git revert
+git revert [SHA]
+```
+
+</br>
+
+Erase a commit. Resting is dangerous. Using `misxec` which is the default resets changes back to the Working Directory. Using `soft` removes commit back to the Staging Index. Using `hard` throws out all changes made in the commit.
+
+```
+git reset
+git reset [SHA]
+git reset --mixed
+git reset --soft
+git reset --hard
+```
+
+
 # WHAT TO DO WHEN
 
 ## RESOLVING A MERGE CONFLICT
