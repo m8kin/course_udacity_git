@@ -36,7 +36,10 @@ To create/initialise a new repository inside a new local folder. This will creat
 git init
 ```
 </br>
+
 It is good practive to have these files in the repository `.gitignore` conatins file and folder name/prefixes/suffices for all the thing that should be ignored when commiting `README.md` conatins the information about the repository `master` branch is not a special branch. It's exactly like any other branch. The only reason nearly every repository has one is that the `git init` command creates it by default and most people don’t bother to change it.
+
+</br>
 
 If you want to get and existing repository from https://github.com/
 
