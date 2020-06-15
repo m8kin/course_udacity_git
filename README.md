@@ -1,4 +1,4 @@
-# This is a course on how to use Git
+# These are some tips on how to use Git
 
 Git is a version control system for source code.
 
@@ -48,6 +48,15 @@ If you want to get and existing repository from https://github.com/
 
 ```
 git clone [repo https or ssh]
+```
+
+</br>
+
+If you want to get and existing repository from https://github.com/ and then one of its branches
+
+```
+git clone [repo https or ssh]
+git branch [remote-branch-name]
 ```
 
 </br>
