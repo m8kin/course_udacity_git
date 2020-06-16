@@ -196,6 +196,16 @@ git reset --soft
 git reset --hard
 ```
 
+</br>
+
+To push changes to git. Using `--set-upstream origin [branch-name]` will create the new branch remotely.
+
+```
+git push
+git push --set-upstream origin [branch-name]
+```
+
+</br>
 
 # WHAT TO DO WHEN
 
