@@ -4,6 +4,12 @@ Git is a version control system for source code.
 
 Git thinks of its data like a set of snapshots of a mini filesystem. Every time you save the state of your project in Git), it basically takes a picture of what all your files look like at that moment and stores a reference to that snapshot.
 
+Here are some bonus things too:
+https://www.youtube.com/watch?v=1ffBJ4sVUb4
+https://learngitbranching.js.org/
+http://think-like-a-git.net/
+
+
 ## Download Git
 https://git-scm.com/downloads
 
