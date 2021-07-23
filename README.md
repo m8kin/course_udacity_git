@@ -1,4 +1,4 @@
-# This is a course on how to use Git
+# These are some tips on how to use Git
 
 Git is a version control system for source code.
 
@@ -42,18 +42,24 @@ To create/initialise a new repository inside a new local folder. This will creat
 git init
 ```
 </br>
-It is good practive to have these files in the repository
 
-`.gitignore` conatins file and folder name/prefixes/suffices for all the thing that should be ignored when commiting
+It is good practive to have these files in the repository `.gitignore` conatins file and folder name/prefixes/suffices for all the thing that should be ignored when commiting `README.md` conatins the information about the repository `master` branch is not a special branch. It's exactly like any other branch. The only reason nearly every repository has one is that the `git init` command creates it by default and most people don’t bother to change it.
 
-`README.md` conatins the information about the repository
-
-`master` branch is not a special branch. It's exactly like any other branch. The only reason nearly every repository has one is that the `git init` command creates it by default and most people don’t bother to change it.
+</br>
 
 If you want to get and existing repository from https://github.com/
 
 ```
 git clone [repo https or ssh]
+```
+
+</br>
+
+If you want to get and existing repository from https://github.com/ and then one of its branches
+
+```
+git clone [repo https or ssh]
+git branch [remote-branch-name]
 ```
 
 </br>
@@ -196,6 +202,16 @@ git reset --soft
 git reset --hard
 ```
 
+</br>
+
+To push changes to git. Using `--set-upstream origin [branch-name]` will create the new branch remotely.
+
+```
+git push
+git push --set-upstream origin [branch-name]
+```
+
+</br>
 
 # WHAT TO DO WHEN
 
@@ -278,8 +294,7 @@ blank lines can be used for spacing
 
 `[abc]` matches a, b, _or_ c
 
-`**` matches nested directories
-- i.e. (a/**/z) matches (a/z, a/b/z, a/b/c/z)
+`**` matches nested directories i.e. (a/**/z) matches (a/z, a/b/z, a/b/c/z)
 
 </br>
 
